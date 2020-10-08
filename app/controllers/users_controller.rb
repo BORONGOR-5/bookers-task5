@@ -36,18 +36,49 @@ class UsersController < ApplicationController
 
 
   def followeruser
-    @user  = User.find(params[:id])
+    @user = User.find(params[:id])
     @users = @user.followeruser
     render 'show_follower'
   end
 
   def followeduser
-    @user  = User.find(params[:id])
+    @user = User.find(params[:id])
     @users = @user.followeduser
     render 'show_followed'
   end
 
-
+  def index_search
+    
+  end
+  # def search
+  #   if params[:name].present?
+  #     if params[:model] == "1"
+  #       if params[:searched] == "1"
+  #       @users = User.where('name LIKE ?', "#{params[:name]}")
+  #       elsif params[:searched] == "2"
+  #         @users = User.where('name LIKE ?', "#{params[:name]}%")
+  #       elsif params[:searched] == "3"
+  #         @users = User.where('name LIKE ?', "%#{params[:name]}")
+  #       elsif params[:searched] == "4"
+  #         @users = User.where('name LIKE ?', "%#{params[:name]}%")
+  #       end
+  #     elsif params[:model] == "2"
+  #       if params[:searched] == "1"
+  #       @users = User..where('name LIKE ?', "#{params[:name]}")
+  #       elsif params[:searched] == "2"
+  #         @users = User.where('name LIKE ?', "#{params[:name]}%")
+  #       elsif params[:searched] == "3"
+  #         @users = User.where('name LIKE ?', "%#{params[:name]}")
+  #       elsif params[:searched] == "4"
+  #         @users = User.where('name LIKE ?', "%#{params[:name]}%")
+  #       end
+  #     end
+  #     render 'show_search_users'
+  #   else
+  #     @users = User.none
+  #     render 'show_search_users'
+  #   end
+  # end
 
 
 
